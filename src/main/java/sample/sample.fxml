@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: FED700;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="19.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lock-icon-11.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="19.0" layoutY="273.0" text="sample@email.com">
+               <font>
+                  <Font name="Monospaced Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="303.0" text="(555)555-5555">
+               <font>
+                  <Font name="Monospaced Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="425.0" />
+   </children>
+</HBox>
