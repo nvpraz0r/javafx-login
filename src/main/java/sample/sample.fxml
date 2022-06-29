@@ -5,28 +5,55 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: FED700;">
+      <AnchorPane prefHeight="400.0" prefWidth="205.0" style="-fx-background-color: #4f5d73;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="19.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+            <Label layoutX="26.0" layoutY="186.0" text="(555)555-5555" textFill="#f5efe9">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="3.0" layoutY="251.0" text="sample@email.com" textFill="#f5efe7">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="16.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@lock-icon-11.png" />
+                  <Image url="@computer.png" />
                </image>
             </ImageView>
-            <Label layoutX="19.0" layoutY="273.0" text="sample@email.com">
-               <font>
-                  <Font name="Monospaced Bold Italic" size="17.0" />
-               </font>
-            </Label>
-            <Label layoutX="24.0" layoutY="303.0" text="(555)555-5555">
-               <font>
-                  <Font name="Monospaced Bold" size="18.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="400.0" prefWidth="425.0" />
+      <AnchorPane prefHeight="400.0" prefWidth="425.0" style="-fx-background-color: #76c2af;">
+         <children>
+            <Label layoutX="54.0" layoutY="187.0" text="Username" textFill="#4f5d73">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="57.0" layoutY="252.0" text="Password" textFill="#4f5d73">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="163.0" layoutY="188.0">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="163.0" layoutY="253.0">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="145.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@locked.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </HBox>
