@@ -9,14 +9,14 @@
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="205.0" style="-fx-background-color: #4f5d73;">
          <children>
-            <Label layoutX="26.0" layoutY="186.0" text="(555)555-5555" textFill="#f5efe9">
+            <Label layoutX="17.0" layoutY="186.0" text="(555)555-5555" textFill="#f5efe9">
                <font>
-                  <Font name="Malgun Gothic Bold" size="20.0" />
+                  <Font name="Arial Black" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="3.0" layoutY="251.0" text="sample@email.com" textFill="#f5efe7">
+            <Label layoutX="3.0" layoutY="226.0" text="sample@email.com" textFill="#f5efe7">
                <font>
-                  <Font name="Malgun Gothic Bold" size="20.0" />
+                  <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="16.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -33,26 +33,41 @@
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="57.0" layoutY="252.0" text="Password" textFill="#4f5d73">
+            <Label layoutX="57.0" layoutY="228.0" text="Password" textFill="#4f5d73">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="163.0" layoutY="188.0">
+            <TextField fx:id="tf_username" alignment="CENTER" layoutX="163.0" layoutY="188.0" promptText="username">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
             </TextField>
-            <TextField layoutX="163.0" layoutY="253.0">
+            <TextField fx:id="tf_password" alignment="CENTER" layoutX="163.0" layoutY="229.0" promptText="password">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
             </TextField>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="145.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="170.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@locked.png" />
                </image>
             </ImageView>
+            <Button fx:id="button_login" layoutX="206.0" layoutY="268.0" mnemonicParsing="false" style="-fx-background-color: #e0995e;" text="Login" textFill="#f5efe7">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="119.0" layoutY="328.0" text="Not a user?" textFill="#f5efe9">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="button_sign_up" layoutX="205.0" layoutY="323.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Sign Up!" textFill="#4f5d73" underline="true">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
