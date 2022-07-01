@@ -11,7 +11,7 @@
             <Font name="Arial Black" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="label_super_pw" layoutX="48.0" layoutY="160.0" text="Your super password is: wordpass" textFill="#f5efe9">
+      <Label fx:id="label_super_pw" layoutX="48.0" layoutY="160.0" text="Your super password is: " textFill="#f5efe9">
          <font>
             <Font name="Arial Black" size="27.0" />
          </font>
