@@ -17,15 +17,15 @@ import java.sql.*;
  */
 public class DBUtils {
 
-    public static void changeScene(ActionEvent event, String fxmlFile, String title, String username, String super_pw){
+    public static void changeScene(ActionEvent event, String fxmlFile, String title, String username, String superPW){
         Parent root = null;
 
-        if(username != null && super_pw != null){
+        if(username != null && superPW != null){
             try{
                 FXMLLoader loader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
                 root = loader.load();
                 LoggedInController loggedInController = loader.getController();
-                loggedInController.setUserInformation(username, super_pw);
+                loggedInController.setUserInformation(username, superPW);
             } catch (IOException e){
                 e.printStackTrace();
             }
@@ -43,7 +43,7 @@ public class DBUtils {
         stage.show();
     }
 
-    public static void signUpUser(ActionEvent event, String username, String password, String super_pw){
+    public static void signUpUser(ActionEvent event, String username, String password, String superPW){
         Connection connection = null;
         PreparedStatement psInsert = null;
         PreparedStatement psCheckUserExists = null;
@@ -61,13 +61,13 @@ public class DBUtils {
                 alert.setContentText("Username already exists");
                 alert.show();
             } else {
-                psInsert = connection.prepareStatement("INSERT INTO users (username, password, super_pw VALUES (?, ?, ?)");
+                psInsert = connection.prepareStatement("INSERT INTO users (username, password, superPW VALUES (?, ?, ?)");
                 psInsert.setString(1, username);
                 psInsert.setString(2, password);
-                psInsert.setString(3, super_pw);
+                psInsert.setString(3, superPW);
                 psInsert.executeUpdate();
 
-                changeScene(event, "logged-in.fxml", "Welcome!", username, super_pw);
+                changeScene(event, "logged-in.fxml", "Welcome!", username, superPW);
             }
         } catch (SQLException e){
             e.printStackTrace();
@@ -110,9 +110,53 @@ public class DBUtils {
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/javafx", "root", "kingslayer");
-//            preparedStatement = connection.prepareStatement("")
+            preparedStatement = connection.prepareStatement("SELECT password, superPW FROM users WHERE username = ?");
+            preparedStatement.setString(1, username);
+            resultSet = preparedStatement.executeQuery();
+
+            if(!resultSet.isBeforeFirst()){
+                System.out.println("User not found in database");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Provided credentials are incorrect");
+                alert.show();
+            } else {
+                while(resultSet.next()){
+                    String retrievedPassword = resultSet.getString("password");
+                    String retrievedSuperPW = resultSet.getString("superPW");
+                    if(retrievedPassword.equals(password)){
+                        changeScene(event, "logged-in.fxml", "Welcome", username, retrievedSuperPW);
+                    } else {
+                        System.out.println("Passwords did not match");
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setContentText("Provided credentials are incorrect");
+                        alert.show();
+                    }
+                }
+            }
         } catch (SQLException e){
             e.printStackTrace();
+        } finally {
+            if(resultSet != null){
+                try{
+                    resultSet.close();
+                } catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+            if(preparedStatement != null){
+                try{
+                    preparedStatement.close();
+                } catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+            if(connection != null){
+                try{
+                    connection.close();
+                } catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

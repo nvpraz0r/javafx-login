@@ -57,7 +57,7 @@
                   <Font name="Arial Black" size="18.0" />
                </font>
             </RadioButton>
-            <Button fx:id="button_signup" layoutX="151.0" layoutY="314.0" mnemonicParsing="false" style="-fx-background-color: #e0995e; -fx-cursor: hand;" text="Sign Up" textFill="#f5efe9">
+            <Button fx:id="button_sign_up" layoutX="151.0" layoutY="314.0" mnemonicParsing="false" style="-fx-background-color: #e0995e; -fx-cursor: hand;" text="Sign Up" textFill="#f5efe9">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font>

@@ -18,7 +18,7 @@ public class LoggedInController implements Initializable{
     private Label label_welcome;
 
     @FXML
-    private Label label_super_pw;
+    private Label label_superPW;
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -33,10 +33,10 @@ public class LoggedInController implements Initializable{
     /**
      * This function displays the user's information once they log in
      * @param username the user's display name
-     * @param super_pw the "super password" radio button that is selected when an account in created
+     * @param superPW the "super password" radio button that is selected when an account in created
      */
-    public void setUserInformation(String username, String super_pw){
+    public void setUserInformation(String username, String superPW){
         label_welcome.setText("Welcome " + username + "!");
-        label_super_pw.setText("Your super secret password is: " + super_pw + ".");
+        label_superPW.setText("Your super secret password is: " + superPW + ".");
     }
 }
