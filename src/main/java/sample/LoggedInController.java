@@ -1,9 +1,7 @@
 package sample;
 
-//import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -26,8 +24,8 @@ public class LoggedInController implements Initializable{
     public void initialize(URL location, ResourceBundle resources){
         button_logout.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent actionEvent) {
-                DBUtils.changeScene(actionEvent, "sample.fxml", "Log In", null, null);
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "sample.fxml", "Log In", null, null);
             }
         });
     }
